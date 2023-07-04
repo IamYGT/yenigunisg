@@ -1,0 +1,20 @@
+ 	RewriteEngine On
+ #	RewriteBase /
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}.php -f
+#	RewriteRule ^(.*)$ $1.php
+	RewriteRule ^([a-zA-Z0-9_-]+)\/?$ $1.php [NC]
+
+
+	RewriteRule ^index$ index.php [L,QSA]
+	RewriteRule makale/([a-zA-Z0-9_-]+)$ makale-detay.php?url=$1 [L,QSA]
+ 	RewriteRule hizmet/([a-zA-Z0-9_-]+)$ hizmet-detay.php?url=$1 [L,QSA]
+ 	RewriteRule dokuman-kategori/([a-zA-Z0-9_-]+)$ dokumanlar.php?url=$1 [L,QSA]
+ 	RewriteRule dokuman/([a-zA-Z0-9_-]+)$ dokuman-detay.php?url=$1 [L,QSA]
+ 	RewriteRule egitim/([a-zA-Z0-9_-]+)$ egitim-detay.php?url=$1 [L,QSA]
+ 	RewriteRule proje/([a-zA-Z0-9_-]+)$ proje-detay.php?url=$1 [L,QSA]
+ 	RewriteRule kurumsal/([a-zA-Z0-9_-]+)$ kurumsal2.php?url=$1 [L,QSA]
+  RewriteRule kategori/([a-zA-Z0-9_-]+)$ proje-kategori.php?url=$1 [L,QSA]
+
+ 	RewriteRule ^sitemap\.xml$ sitemap.php [L]
+  ErrorDocument 404 https://www.yenigunisg.com.tr/404.php
